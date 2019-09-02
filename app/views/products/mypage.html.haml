@@ -1,4 +1,6 @@
 = render partial: "header.html.haml"
+- breadcrumb :mypages
+= render "layouts/breadcrumbs"
 .mypage-container
   .mypage-size
     = render partial: "mypage-left"
