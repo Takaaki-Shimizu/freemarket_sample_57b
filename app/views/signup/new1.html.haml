@@ -13,7 +13,7 @@
           .guide-messages__payment 支払い方法
           .guide-messages__end 完了
         .guide-line
-          .guide-line__dot-red　
+          .guide-line__dot-red
           .guide-line__border-gray
           .guide-line__dot-gray
           .guide-line__border-gray
@@ -57,7 +57,8 @@
           = render partial: 'error-messages', locals: {user: @user, column: "password_confirmation"}
         - unless session[:provider].blank?
           = f.hidden_field :password_confirmation, value: session[:password]
-          
+          = session[:provider] = nil
+
       .information-registration__base__main-box__click-area__input
         %p.information-registration__base__main-box__click-area__input__information__label 本人確認
         %p.information-registration__base__main-box__click-area__input__notes
