@@ -1,28 +1,4 @@
-.information
-  .information__registration
-    .information__registration__main-header
-      .information__registration__main-header__logo-mark
-        .information__registration__main-header__logo-mark__img
-          = link_to '',root_path
-          = link_to image_tag('logo_horizontal.png', class: "img"),root_path
-      .information__registration__main-header__reft
-        .guide-messages
-          .guide-messages__information__red 会員情報
-          .guide-messages__tel__red 電話番号認証
-          .guide-messages__address お届け先住所入力
-          .guide-messages__payment 支払い方法
-          .guide-messages__end 完了
-        .guide-line
-          .guide-line__dot-red
-          .guide-line__border-red
-          .guide-line__dot-red
-          .guide-line__border-gray
-          .guide-line__dot-gray
-          .guide-line__border-gray
-          .guide-line__dot-gray
-          .guide-line__border-gray
-          .guide-line__dot-gray 
--# 電話番号確認ページ
+= render partial: "signup/new_header/new_tel"
 .information-registration__base
   .information-registration__base__main-box
     .information-registration__base__main-box__inner-header
