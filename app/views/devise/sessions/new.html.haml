@@ -1,31 +1,29 @@
-.information-registration-header
+.information-header
   =link_to image_tag("logo_horizontal.png",class: "img"),root_path
-  .information-registration-header__white
-    .information-registration-header__white__content
+  .main-box
+    .new-box
       %h3 アカウントをお持ちでない方はこちら
-      .information-registration-header__white__content__new
+      .link-new
         = link_to '新規会員登録',new1_signup_index_path, class: "new_user"
-    .information-registration-header__white__content-bottom
-      .information-registration-header__white__content-bottom__facebook
+    .form_and_sns
+      .form_and_sns__facebook
         %i.fab.fa-facebook
         = link_to 'Facebookでログイン', user_facebook_omniauth_authorize_path, method: :post
       - if session[:value] == "facebook"
         = render partial: "devise/registrations/notice" 
-      .information-registration-header__white__content-bottom__google
+      .form_and_sns__google
         = link_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, method: :post
         = image_tag "google.svg",class: "google"
       - if session[:value] == "google"
         = render partial: "devise/registrations/notice" 
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-        .information-registration-header__white__content-bottom__form
-          .information-registration-header__white__content-bottom__form__mail
+        .form_and_sns__form
+          .mail
             = f.email_field :email,placeholder: "メールアドレス",class: "input-mail"
-          .information-registration-header__white__content-bottom__form__password
+          .password
             = f.password_field :password, autocomplete: "off",placeholder: "パスワード",class: "input-password"
-         
-          .information-registration-header__white__content-bottom__form__submit
+          .rogin-submit
             = f.submit "ログイン", class: 'input-btn'
-      .information-registration-header__white__content-bottom__text
+      .bottom
         =link_to "パスワードをお忘れの方",root_path,class: "text"
-
 = render partial: "devise/registrations/form-footer" 
